@@ -1,0 +1,14 @@
+.callpage-container {
+
+  .video-container {
+    height: 600px;
+    width: 600px;
+    object-fit: contain; // use "cover" to avoid distortion
+    position: absolute;
+    right: 0;
+    z-index: -1;
+  }
+  .local-video{
+    position: relative;
+  }
+}

@@ -1,0 +1,17 @@
+.Example {
+    margin-left: 45%;
+    font-size: 45px;
+    font-weight: 500;
+    font-family: 'Trebuchet MS';
+  
+    &__blinker {
+      animation: blinker 0.5s cubic-bezier(0.5, 0, 1, 1) infinite alternate;
+      
+      @keyframes blinker {
+        to {
+          opacity: 0;
+        }
+      }
+    }
+  }
+  
