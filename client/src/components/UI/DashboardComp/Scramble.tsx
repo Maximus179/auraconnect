@@ -7,7 +7,6 @@ const scrambleTexts: ScrambleTexts = [
   'Aura Connect',
   'Video Call',
   'Chat Rooms',
-  'Delete Messages',
   'To Do List',
   'Feedback Forms',
   'Reset Password',

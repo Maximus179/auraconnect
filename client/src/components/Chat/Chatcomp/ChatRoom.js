@@ -10,7 +10,7 @@ const ChatRoom = ({ currentRoom }) => {
   const query = messagesRef
     .where("room", "==", currentRoom) 
     .orderBy("createdAt")
-    .limit(50);
+    .limit(100);
 
   const [messages] = useCollectionData(query, { idField: "id" });
   const [message, setMessage] = useState(""); 
@@ -32,9 +32,6 @@ const ChatRoom = ({ currentRoom }) => {
     customRef.current.scrollIntoView({ behavior: "smooth" }); //autosroll after the screen is occupied with messages
   };
 
-  const handleDelete = (createdAt, id) => {
-    db.collection("messages").doc(id).delete();
-  };
   return (
     <>
       <div className="messages">
@@ -43,7 +40,6 @@ const ChatRoom = ({ currentRoom }) => {
             <MessageCard
               message={message}
               key={message.id}
-              handleDelete={handleDelete}
             />
           ))}
         <span ref={customRef}></span>

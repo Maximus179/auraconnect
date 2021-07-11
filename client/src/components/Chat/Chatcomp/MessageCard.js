@@ -19,9 +19,6 @@ const MessageCard = ({ message, handleDelete }) => {
           <div className="text">
             <p>{text}</p>
           </div>
-          <div>
-            <button class="btn btn-success btn-sm" style={{ height: "40px" }} onClick={() => handleDelete(createdAt, id)}>Delete</button>
-          </div>
         </div>
       </div>
     </>
