@@ -24,7 +24,7 @@ const Signup = () => {
       <p class="tip"></p>
       <div class="cont">
         <div class="form sign-in">
-          <h2>Welcome </h2>
+          <h2>Welcome, Sign Up Now </h2>
           <br />
           <br />
           <form onSubmit={handleSubmit}>

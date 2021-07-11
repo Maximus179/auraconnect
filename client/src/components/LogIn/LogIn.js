@@ -25,7 +25,7 @@ const LogIn = () => {
       <p class="tip"></p>
       <div class="cont">
         <div class="form sign-in">
-          <h2>Welcome back,</h2>
+          <h2>Welcome back, Log In</h2>
           <br />
           <br />
           <form onSubmit={handleSubmit}>
