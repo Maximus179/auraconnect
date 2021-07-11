@@ -256,7 +256,7 @@ const CallPage = () => {
         )}
       </div>
       <div className="local-video">
-        <video id="myVideo" src="" width="600px" height="600px" muted="muted"></video>
+        <video id="myVideo" src="" width="650px" height="650px" muted="muted"></video>
       </div>
     </div>
   ); //use muted, for muting the local video and stopping the playback sound.
