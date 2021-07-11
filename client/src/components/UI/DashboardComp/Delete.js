@@ -1,6 +1,7 @@
-import firebase from "firebase/app";
+import firebase from "firebase";
 import Heading from "../Heading/Heading";
 import Sidebar from "./Sidebar";
+import 'firebase/auth';
 
 const Delete = () => {
 
