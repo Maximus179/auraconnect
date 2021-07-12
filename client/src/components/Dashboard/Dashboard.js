@@ -51,7 +51,7 @@ const Dashboard = () => {
         </div>
         <div class="col">
           <div class="card">
-            <ReactPlayer url="https://youtu.be/Ukv-488a-H4" class="card-img-top" width="100%" height="300px" controls />
+            <ReactPlayer url="https://youtu.be/4wNmTmaVyv0" class="card-img-top" width="100%" height="300px" controls />
             <div class="card-body">
               <h5 class="card-title">How to get started?</h5>
               <p class="card-text">Have any doubts? Confused about how to get started? Don't worry, we've got you covered. Watch the video and begin.</p>
