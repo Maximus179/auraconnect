@@ -43,7 +43,7 @@ const Signup = () => {
           <br />
           <br />
           <p><strong>Already have an account with us?</strong><Link to="/login"><strong> Log In</strong></Link></p>
-          <p>Want to be a guest user? Start your videocall now. <Link to="/home">Meet Link</Link></p>
+          <p>Want to be a guest user? Start your videocall now. <Link to="/meet">Meet Link</Link></p>
         </div>
         <div class="sub-cont">
           <div class="img">

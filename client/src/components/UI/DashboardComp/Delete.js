@@ -22,7 +22,7 @@ const Delete = () => {
 
   const { currentUser } = useContext(AuthContext);
   if (!currentUser) {
-      return <Redirect to="/login" />;
+    return <Redirect to="/login" />;
   }
 
   return (
@@ -36,6 +36,11 @@ const Delete = () => {
           <div class="input_field ">
             <input type="email" name="email" placeholder="Re-enter registered email id" required />
           </div>
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
           <br />
           <br />
         </form>

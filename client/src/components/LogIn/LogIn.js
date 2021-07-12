@@ -44,7 +44,7 @@ const LogIn = () => {
           <br />
           <p><Link to="/forgotpassword"><strong>Forgot Password?</strong></Link></p>
           <p><strong>Don't have an account with us?</strong><Link to="/"><strong> Sign Up</strong></Link></p>
-          <p>Want to be a guest user? Start your videocall now. <Link to="/home">Meet Link</Link></p>
+          <p>Want to be a guest user? Start your videocall now. <Link to="/meet">Meet Link</Link></p>
         </div>
         <div class="sub-cont">
           <div class="img">
