@@ -5,6 +5,7 @@ import {
   BASE_URL,
   GET_CALL_ID,
   SAVE_CALL_ID,
+  GET_ICE_SERVER,
 } from "./../../utils/apiEndpoints";
 import io from "socket.io-client";
 import Peer from "simple-peer";
@@ -32,7 +33,7 @@ const CallPage = () => {
     initialState
   );
 
-
+  const iceServers = useRef([]);
   const [streamObj, setStreamObj] = useState();
   const [screenCastStream, setScreenCastStream] = useState();
   const [meetInfoPopup, setMeetInfoPopup] = useState(false);
@@ -46,13 +47,23 @@ const CallPage = () => {
   useEffect(() => {
     if (isAdmin) {
       setMeetInfoPopup(true);
-    } initWebRTC();
+      getICServer();
+    } else {
+      initWebRTC();
+    }
     socket.on("code", (data) => {
       if (data.url === url) {
         peer.signal(data.code);
       }
     });
   }, []);
+
+  //twilio turn servers for mobile-wifi connections
+  const getICServer = async () => {
+    const response = await getRequest(`${BASE_URL}${GET_ICE_SERVER}`);
+    iceServers.current = response;
+    initWebRTC();
+  }
 
   //Make sure redis server is working fine, to save the get call id.
   const getRecieverCode = async () => {
@@ -71,17 +82,26 @@ const CallPage = () => {
       .then((stream) => {
         setStreamObj(stream);
 
-        peer = new Peer({
-          initiator: isAdmin,
-          trickle: false,
-          stream: stream,
-        });
+        if (isAdmin && iceServers.current && iceServers.current.length) {
+          peer = new Peer({
+            initiator: isAdmin,
+            trickle: false,
+            stream: stream,
+            config: {
+              iceServers: iceServers.current
+            }
+          });
+        }
 
 
         if (!isAdmin) {
+          peer = new Peer({
+            initiator: false,
+            trickle: false,
+            stream: stream,
+          });
           getRecieverCode();
         }
-
         peer.on("signal", async (data) => {
           if (isAdmin) {
             let payload = {

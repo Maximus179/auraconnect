@@ -2,6 +2,9 @@ import firebase from "firebase";
 import Heading from "../Heading/Heading";
 import Sidebar from "./Sidebar";
 import 'firebase/auth';
+import { AuthContext } from "./../../../Auth";
+import { useContext } from "react";
+import { Redirect } from "react-router-dom";
 
 const Delete = () => {
 
@@ -12,8 +15,14 @@ const Delete = () => {
       alert("done");
 
     }).catch((error) => {
+      console.error(error);
       alert("Please log in again to delete.")
     });
+  }
+
+  const { currentUser } = useContext(AuthContext);
+  if (!currentUser) {
+      return <Redirect to="/login" />;
   }
 
   return (
@@ -29,8 +38,8 @@ const Delete = () => {
           </div>
           <br />
           <br />
-          <button class="btn btn-warning position-absolute top-90 start-50 translate-middle" onClick={deleteUser}>Delete</button>
         </form>
+        <button class="btn btn-warning position-absolute top-50 end-50 translate-middle" onClick={deleteUser}>Delete</button>
         <br />
         <br />
       </div>

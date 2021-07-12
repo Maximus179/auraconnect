@@ -37,6 +37,7 @@
     "shortid": "^2.2.16",
     "simple-peer": "^9.9.3",
     "socket.io-client": "^3.1.1",
+    "twilio": "^3.65.0",
     "typescript": "^4.3.5",
     "web-vitals": "^0.2.4"
   },
