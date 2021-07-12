@@ -1,4 +1,4 @@
-import { useEffect, useReducer, useState } from "react";
+import { useEffect, useReducer, useState, useRef } from "react";
 import { useParams, useHistory } from "react-router-dom";
 import { getRequest, postRequest } from "./../../utils/apiRequests";
 import {
@@ -126,7 +126,7 @@ const CallPage = () => {
           messageListReducer({
             type: "addMessage",
             payload: {
-              user: "other",
+              user: "friend",
               msg: data.toString(),
               time: Date.now(),
             },
@@ -136,7 +136,7 @@ const CallPage = () => {
             alert: true,
             isPopup: true,
             payload: {
-              user: "other",
+              user: "friend",
               msg: data.toString(),
             },
           });

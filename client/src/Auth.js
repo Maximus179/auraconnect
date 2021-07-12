@@ -19,6 +19,7 @@ export const AuthProvider = ({ children }) => {
           marginTop="250px"
           alignItems="center"
           loading={loading}
+          color="black"
       />);
   }
   return (
