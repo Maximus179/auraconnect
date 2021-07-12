@@ -16,6 +16,9 @@ const MessageCard = ({ message, handleDelete }) => {
           <div className="email">
             <p>{email}</p>
           </div>
+          <div className="createdAt">
+            <p>{createdAt}</p>
+          </div>
           <div className="text">
             <p>{text}</p>
           </div>
