@@ -243,7 +243,7 @@ const CallPage = () => {
   return (
     <div>
       <div className="callpage-container">
-        <video className="video-container" src=""></video>
+        <video className="video-container" src="" muted="muted"></video>
 
         <CallPageHeader
           isMessenger={isMessenger}
